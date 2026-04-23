@@ -27,7 +27,7 @@ export default function Home() {
 
     try {
       const res = await fetch(
-        `http://localhost:8080/api/profile/codeforces/${handle}`
+        `${process.env.NEXT_PUBLIC_API_URL}/api/profile/codeforces/${handle}`
       );
 
       const result = await res.json();
@@ -44,7 +44,7 @@ export default function Home() {
 
   try {
     const res = await fetch(
-      `http://localhost:8080/api/profile/topic-analysis?handle=${handle}&topic=${topic}`
+      `${process.env.NEXT_PUBLIC_API_URL}/api/profile/topic-analysis?handle=${handle}&topic=${topic}`
     );
 
     const result = await res.json();
@@ -66,7 +66,7 @@ const fetchCompare = async () => {
 
   try {
     const res = await fetch(
-      `http://localhost:8080/api/profile/compare?user1=${user1}&user2=${user2}`
+      `${process.env.NEXT_PUBLIC_API_URL}/api/profile/compare?user1=${user1}&user2=${user2}`
     );
 
     const result = await res.json();
